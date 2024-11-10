@@ -1,113 +1,64 @@
-/* Reset and Normalize */
-* {
+/* 기본 스타일 초기화 */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-::selection {
-    background: #00d2ff;
-}
-
 html, body {
     font-size: 16px;
-    word-break: keep-all;
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Bazier Square,
-        Noto Sans KR, Segoe UI, Apple SD Gothic Neo, Roboto, Helvetica Neue, Arial,
-        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    letter-spacing: -0.3px;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Bazier Square, Noto Sans KR, Segoe UI, Apple SD Gothic Neo, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     color: #222;
-    padding-bottom: 2rem;
+    letter-spacing: -0.3px;
+    word-break: keep-all;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* 반응형 설정 */
 @media screen and (max-width: 960px) {
     html, body {
         font-size: 14px;
     }
 }
 
-/* Header bar */
-body:before {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    display: block;
+/* 헤더 그라데이션 */
+body::before {
     content: "";
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 10px;
-    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    z-index: 1;
 }
 
-/* Container */
+/* 컨테이너 설정 */
 .container {
-    width: 100%;
     max-width: 50rem;
     margin: auto;
     padding: 2rem;
 }
 
-/* Section Styling */
-section {
-    margin-bottom: 4rem;
-}
-
+/* 제목 및 텍스트 스타일 */
 h1 {
     font-size: 5rem;
     line-height: 1.1;
-    margin: 0 0 2rem;
 }
 
-h2 {
-    font-size: 3rem;
-    margin: 4rem 0 2rem;
+@media screen and (max-width: 960px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
 
-h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-h4 {
-    font-size: 1.8rem;
-    margin: 1rem 0;
-}
-
-h5 {
-    font-size: 1.3rem;
-    color: #333;
-    margin: 0.5rem 0;
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
-a {
-    color: #3a7bd5;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #00d2ff;
-}
-
-/* Period Mark */
-.period-mark {
-    color: #3a7bd5;
-}
-
-/* Big Paragraph */
 .big-paragraph {
     font-size: 2rem;
     line-height: 1.4;
     font-weight: 500;
-    margin: 1rem 0;
 }
 
 @media screen and (max-width: 960px) {
@@ -116,97 +67,27 @@ a:hover {
     }
 }
 
-/* Row Styling */
-.row {
-    display: flex;
-    padding: 2rem 0;
-    border-bottom: 1px solid #eeeeee;
+.period-mark {
+    color: #3a7bd5;
 }
 
-.row-left {
-    flex-basis: 18rem;
-    padding-right: 1rem;
-    flex-shrink: 0;
+/* 링크 스타일 */
+a {
+    color: #3a7bd5;
+    transition: color 0.3s ease;
 }
 
-.row-right {
-    flex-grow: 1;
+a:hover {
+    color: #00d2ff;
+}
+
+/* 섹션 간격 */
+section {
+    margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 960px) {
-    .row {
-        flex-direction: column;
+    section {
+        padding: 0 1rem;
     }
-
-    .row-left {
-        flex-basis: 100%;
-        padding-right: 0;
-        padding-bottom: 1rem;
-    }
-}
-
-/* Project Details */
-.project {
-    padding: 1.5rem 0;
-}
-
-.project:first-child {
-    padding-top: 0;
-}
-
-.time {
-    display: block;
-    margin-bottom: 1.5rem;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-ul > li {
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-ul > li:before {
-    position: absolute;
-    left: 0;
-    content: "•";
-    color: #3a7bd5;
-}
-
-/* Additional Section Styling */
-.other {
-    padding: 3rem 0;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.role {
-    display: block;
-    font-weight: 500;
-}
-
-/* Contact Section Styling */
-.contact ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-}
-
-.contact ul li {
-    margin-right: 1.5rem;
-}
-
-.contact ul li a {
-    color: #3a7bd5;
-    text-decoration: none;
-}
-
-.contact ul li a:hover {
-    color: #00d2ff;
 }
