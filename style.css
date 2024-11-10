@@ -21,12 +21,14 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* 전체 크기 조정 */
 @media screen and (max-width: 960px) {
     html, body {
         font-size: 14px;
     }
 }
 
+/* 최상단 배경 막대 */
 body:before {
     position: fixed;
     z-index: 1;
@@ -38,28 +40,19 @@ body:before {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
 }
 
-section {
-    padding: 0 2rem;
+/* 기본적인 레이아웃 스타일 */
+.container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+    padding: 2rem;
 }
 
-p {
-    margin: 0 0 1rem 0;
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
-a {
-    color: #3a7bd5;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #00d2ff;
-}
-
+/* 헤딩 스타일 */
 h1 {
     font-size: 5rem;
     line-height: 1.1;
+    margin: 0 0 2rem 0;
 }
 
 @media screen and (max-width: 960px) {
@@ -78,18 +71,25 @@ h3, h4 {
     margin: 0 0 1rem 0;
 }
 
-@media screen and (max-width: 960px) {
-    h4 {
-        font-size: 1.5rem;
-    }
+/* 본문 스타일 */
+p {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-h5 {
-    font-size: 1.3rem;
-    margin: 0 0 0.5rem 0;
-    color: #333;
+/* 링크 스타일 */
+a {
+    color: #3a7bd5;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+a:hover {
+    color: #00d2ff;
+}
+
+/* 리스트 스타일 */
 ul {
     list-style: none;
     padding: 0;
@@ -110,28 +110,7 @@ ul > li:before {
     color: #3a7bd5;
 }
 
-.container {
-    width: 100%;
-    max-width: 50rem;
-    margin: auto;
-}
-
-.period-mark {
-    color: #3a7bd5;
-}
-
-.big-paragraph {
-    font-size: 2rem;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-@media screen and (max-width: 960px) {
-    .big-paragraph {
-        font-size: 1.5rem;
-    }
-}
-
+/* 블록 스타일 */
 .row {
     display: flex;
     padding: 3rem 0;
@@ -148,6 +127,7 @@ ul > li:before {
     flex-grow: 1;
 }
 
+/* 미디어 쿼리로 반응형 레이아웃 구성 */
 @media screen and (max-width: 960px) {
     .row {
         flex-direction: column;
@@ -160,24 +140,20 @@ ul > li:before {
     }
 }
 
-.other {
-    padding: 3rem 0;
-    border-bottom: 1px solid #eeeeee;
+/* 기타 스타일 */
+.period-mark {
+    color: #3a7bd5;
 }
 
-.role {
-    display: block;
+.big-paragraph {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 1rem 0;
 }
 
-.project {
-    padding: 1.5rem 0;
-}
-
-.project:first-child {
-    padding-top: 0;
-}
-
-.time {
-    display: block;
-    margin-bottom: 1.5rem;
+@media screen and (max-width: 960px) {
+    .big-paragraph {
+        font-size: 1.5rem;
+    }
 }
