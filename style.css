@@ -1,6 +1,8 @@
 /* Reset and Normalize */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ::selection {
@@ -21,14 +23,13 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 전체 크기 조정 */
 @media screen and (max-width: 960px) {
     html, body {
         font-size: 14px;
     }
 }
 
-/* 최상단 배경 막대 */
+/* Header bar */
 body:before {
     position: fixed;
     z-index: 1;
@@ -40,7 +41,7 @@ body:before {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
 }
 
-/* 기본적인 레이아웃 스타일 */
+/* Container */
 .container {
     width: 100%;
     max-width: 50rem;
@@ -48,37 +49,44 @@ body:before {
     padding: 2rem;
 }
 
-/* 헤딩 스타일 */
+/* Section Styling */
+section {
+    margin-bottom: 4rem;
+}
+
 h1 {
     font-size: 5rem;
     line-height: 1.1;
-    margin: 0 0 2rem 0;
-}
-
-@media screen and (max-width: 960px) {
-    h1 {
-        font-size: 3rem;
-    }
+    margin: 0 0 2rem;
 }
 
 h2 {
     font-size: 3rem;
-    margin: 4rem 0 2rem 0;
+    margin: 4rem 0 2rem;
 }
 
-h3, h4 {
+h3 {
     font-size: 2rem;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
 }
 
-/* 본문 스타일 */
+h4 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+h5 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
 p {
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
-/* 링크 스타일 */
 a {
     color: #3a7bd5;
     text-decoration: none;
@@ -89,31 +97,29 @@ a:hover {
     color: #00d2ff;
 }
 
-/* 리스트 스타일 */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
-    font-size: 1.1rem;
-}
-
-ul > li {
-    position: relative;
-    padding: 0.2rem 0 0.2rem 1rem;
-}
-
-ul > li:before {
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    content: "•";
+/* Period Mark */
+.period-mark {
     color: #3a7bd5;
 }
 
-/* 블록 스타일 */
+/* Big Paragraph */
+.big-paragraph {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 960px) {
+    .big-paragraph {
+        font-size: 1.5rem;
+    }
+}
+
+/* Row Styling */
 .row {
     display: flex;
-    padding: 3rem 0;
+    padding: 2rem 0;
     border-bottom: 1px solid #eeeeee;
 }
 
@@ -127,7 +133,6 @@ ul > li:before {
     flex-grow: 1;
 }
 
-/* 미디어 쿼리로 반응형 레이아웃 구성 */
 @media screen and (max-width: 960px) {
     .row {
         flex-direction: column;
@@ -140,20 +145,68 @@ ul > li:before {
     }
 }
 
-/* 기타 스타일 */
-.period-mark {
+/* Project Details */
+.project {
+    padding: 1.5rem 0;
+}
+
+.project:first-child {
+    padding-top: 0;
+}
+
+.time {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+ul > li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+ul > li:before {
+    position: absolute;
+    left: 0;
+    content: "•";
     color: #3a7bd5;
 }
 
-.big-paragraph {
-    font-size: 2rem;
-    line-height: 1.4;
-    font-weight: 500;
-    margin: 1rem 0;
+/* Additional Section Styling */
+.other {
+    padding: 3rem 0;
+    border-bottom: 1px solid #eeeeee;
 }
 
-@media screen and (max-width: 960px) {
-    .big-paragraph {
-        font-size: 1.5rem;
-    }
+.role {
+    display: block;
+    font-weight: 500;
+}
+
+/* Contact Section Styling */
+.contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.contact ul li {
+    margin-right: 1.5rem;
+}
+
+.contact ul li a {
+    color: #3a7bd5;
+    text-decoration: none;
+}
+
+.contact ul li a:hover {
+    color: #00d2ff;
 }
